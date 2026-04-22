@@ -11,7 +11,7 @@ import requests
 VIDEO_ID = "i_BfAKPh66I" 
 VISUAL_CHAT_URL = "http://127.0.0.1:8000/push_visual_chat"
 
-# 🌟 THE MASTER KEY YOU FOUND!
+# THE MASTER KEY FOUND!
 AIRI_WS_URL = "ws://127.0.0.1:6121/ws" 
 
 CREATOR_USERNAMES = ["neew1152"]
@@ -44,7 +44,7 @@ async def inject_into_airi():
                         plugin_id = "mnu" + str(uuid.uuid4())[:8]
                         event_id = "evt" + str(uuid.uuid4())[:8]
                         
-                        # 🌟 THE EXACT PAYLOAD YOU REVERSE-ENGINEERED 🌟
+                        # THE EXACT PAYLOAD YREVERSE-ENGINEERED
                         payload = {
                             "json": {
                                 "type": "input:text",
@@ -64,7 +64,7 @@ async def inject_into_airi():
                             }
                         }
                         
-                        # 🌟 THE FIX: ensure_ascii=False prevents Thai characters from turning into alien text!
+                        # THE FIX: ensure_ascii=False prevents Thai characters from turning into alien text!
                         await ws.send(json.dumps(payload, ensure_ascii=False))
                         
                         # Wait 15 seconds for Isla to process, speak, and animate
@@ -90,7 +90,7 @@ def start_youtube_bridge():
         inject_into_airi
         while chat.is_alive():
             for c in chat.get().sync_items():
-                # 🌟 FIX 1: Strip the @ symbol immediately!
+                # Strip the @ symbol immediately!
                 username = c.author.name.replace("@", "")
                 message = c.message
                 if len(message) < 1: continue
@@ -107,7 +107,7 @@ def start_youtube_bridge():
                 try: requests.post(VISUAL_CHAT_URL, json={"user": safe_username, "message": safe_message, "is_creator": is_creator}, timeout=2)
                 except: pass
                 
-                # 🌟 FIX 2: Format perfectly without doubling the name!
+                # Format perfectly without doubling the name!
                 data = {"username": safe_username, "is_creator": is_creator}
                 if is_creator:
                     data["message"] = f"[CREATOR - {safe_username}]: {safe_message}"

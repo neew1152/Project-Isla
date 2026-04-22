@@ -45,7 +45,6 @@ rvc_utils.load_hubert = _fast_load_hubert
 # =====================================================================
 SILENCE_AUDIO = "silence.wav"
 RVC_MODEL_PATH  = "./Models/RVC/tsukuyomi_v2_40k.pth"
-RVC_INDEX_PATH  = "./Models/RVC/added_IVF7852_Flat_nprobe_1_v2.index.bin"
 KOBOLD_URL      = "http://127.0.0.1:5001/v1/chat/completions"
 CPU_WORKERS     = max(1, os.cpu_count() - 2)
 
@@ -82,8 +81,8 @@ _ALPHABET = {'A':'เอ','B':'บี','C':'ซี','D':'ดี','E':'อี','F
 rvc_lock = asyncio.Lock()
 print("⏳ Loading Tsukuyomi-chan Filter...")
 rvc = RVCInference(device="cpu")
-rvc.load_model(RVC_MODEL_PATH, index_path=RVC_INDEX_PATH)
-rvc.set_params(f0method="pm", f0up_key=5, index_rate=0.75)
+rvc.load_model(RVC_MODEL_PATH)
+rvc.set_params(f0method="pm", f0up_key=5, index_rate=0)
 print("✅ Voice Engine Ready!")
 
 thread_pool = ThreadPoolExecutor(max_workers=CPU_WORKERS)
