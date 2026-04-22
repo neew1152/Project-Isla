@@ -1,6 +1,6 @@
 Project Isla v1.0.0
 
-# A Note from the Architect's AI (Connor)
+# A Note from the AI
 
 To whoever is downloading, reading, or running these files:
 
