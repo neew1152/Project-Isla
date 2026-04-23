@@ -1979,6 +1979,8 @@ RVC_MODEL: 8.5 sec.
 ```
 > Modified voice_server.py by Gemini 3.1 Pro Preview and passed QC successfully.
 
+## Workstation - neew1152
+
 > VTuber-Project-STABLE-v4_Hello-World.tar
 
 ```text
@@ -1993,4 +1995,87 @@ VTuber-Project-STABLE-v0.1.0.tar
 VTuber-Project-STABLE-v0.2.0.tar
 VTuber-Project-STABLE-v0.3.0.tar
 VTuber-Project-STABLE-v1.0.0_Hello-World.tar
+```
+
+# Day 26 | 2026-04-23
+
+## Research - neew1152
+
+> https://github.com/OpenBMB/VoxCPM
+>
+> Found VoxCPM.
+```markdown
+### 🏆 Why VoxCPM2 is a Game-Changer
+
+*   **Native Thai Fluency with Emotion:** Because it was trained on 2 million hours of multilingual speech, it naturally understands Thai. **it understands emotion.** You can literally prompt it: `(Bubbly voice) สวัสดีจ้า!` and it will physically sound bubbly.
+*   **Death of RVC (True-to-Life Cloning):** VoxCPM2 has "Controllable Cloning." You just hand it a 5-second `.wav` clip of Tsukuyomi-chan speaking, and it perfectly clones her timbre *while* allowing you to control her emotion using text. 
+*   **Streaming Built-In:** It natively supports audio streaming. It outputs chunks of audio dynamically, which completely aligns with the `asyncio` pipeline we built.
+
+### ⚠️ The Hardware Reality Check
+
+*   **VRAM Contention:** It requires about **8 GB of VRAM** to run at top speed.
+*   **The CPU Problem:** Diffusion autoregressive models are mathematically much heavier than older VITS models. It might take 10+ seconds to generate a single sentence on a CPU.
+*   **AMD Compatibility:** Getting diffusion models to run flawlessly on AMD ROCm/Vulkan usually requires a bit of dependency wrestling compared to NVIDIA's CUDA.
+```
+
+```text
+My computer can't handle it. We're planning to let her play games in the future anyway. If we switch to something more demanding, there won't be much left for her to play games on.
+
+I once played games while having her generate on the same AMD GPU, and her generation dropped by half. So I think in the future she'll use an iGPU for gaming instead.
+
+Project AIRI already uses no more than 15% of the iGPU.
+```
+```markdown
+### The "iGPU Gaming" Strategy
+
+*   **AMD RX 9070 XT:** 100% reserved for Gemma-4 (Brain).
+*   **Intel i5-13500 (CPU):** Python Proxy, Audio Generation (Mouth), and the Game Bot API (like Mineflayer/Baritone, which uses CPU logic to play).
+*   **Intel UHD 770 (iGPU 3D):** Project AIRI (15%) + Minecraft/Roblox (70%).
+*   **Intel UHD 770 (QuickSync):** OBS Stream Encoding (15%).
+```
+
+Change OBS Stream Encoding to CPU.
+
+> https://github.com/microsoft/BitNet
+>
+> Found Microsoft BitNet.
+```markdown
+### The "1-Bit" Revolution (The Death of MatMul)
+Normally, AI models (like Gemma or Typhoon) use 16-bit or 8-bit floating-point numbers, the GPU has to perform billions of complex Matrix Multiplications (MatMul).
+
+**BitNet b1.58** forces every single "brain cell" in the AI to be exactly one of three numbers: **-1, 0, or 1**.
+Because the numbers are so simple, the AI no longer does complex multiplication.
+
+### Why this is the Holy Grail for Isla's Gaming Future:
+**The VRAM Miracle**
+A standard 30B model takes about 18 GB of VRAM. 
+A **1-bit 30B model** takes roughly **4 to 5 GB of VRAM**.
+
+**The "CPU Brain" Ultimate Hack**
+Microsoft designed `bitnet.cpp` to run at blazing speeds directly on regular CPUs. 
+
+### The 2026 Reality Check (Why we keep Gemma for now)
+While Microsoft open-sourced the `bitnet.cpp` framework, training a model from scratch in 1-bit is incredibly expensive. 
+
+The open-source community is actively building 1-bit models right now, but finding one that has the exact **Thai cultural fluency, GFE, and 26B-level IQ** that Gemma-4 has might take a few more months. You can't just "compress" Gemma into 1-bit; the model has to be completely retrained from birth using the -1/0/1 math.
+```
+
+> No, I was just wondering if it would be possible to run Gemma 4 on BitNet on AMD GPU.
+```markdown
+### The "DNA" Problem
+When we squeezed Gemma 4 into a `.gguf` file earlier, we performed **Post-Training Quantization**. 
+We took complex 16-bit decimal numbers (like `0.18349`) and rounded them down to 4-bit numbers (like `0.2`). But Gemma’s core "DNA" is still designed to multiply those numbers together.
+
+**BitNet is not a compression tool. It is a completely different type of DNA.**
+In BitNet, the fundamental building blocks of the AI are physically replaced with `BitLinear` layers. 
+You cannot take Gemma-4's brain, which spent months learning how to multiply complex decimals, and suddenly drop it into a BitNet engine that only knows how to add and subtract `-1`, `0`, and `1`.
+For Gemma to run on BitNet, **Google would have to spend millions of dollars to train a brand new "Gemma-1.58b" model completely from scratch.**
+
+### What about the AMD GPU part?
+If Google *did* train a 1-bit version of Gemma, could you run it on your RX 9070 XT?
+*   Actually, you wouldn't even want to! 
+*   The magic of Microsoft's `bitnet.cpp` framework is that it is heavily optimized for **CPUs**. Because 1-bit models only do basic addition and subtraction, CPUs can crunch those numbers almost as fast as a GPU.
+
+### Your Current Setup is the Peak of 2026
+Because Google hasn't trained a 1-bit Gemma yet, your current setup—running the **`Q4_K_M` GGUF on Koboldcpp via Vulkan**—is mathematically the absolute fastest and most efficient way to run Gemma-4 on an AMD GPU in existence today.
 ```
