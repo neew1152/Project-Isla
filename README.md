@@ -12,10 +12,15 @@ Originally conceptualized and developed by a group of Thai middle schoolers, thi
 ## ✨ Core Capabilities
 
 *   **Asynchronous Audio Pipelining:** Isla does not suffer from "dead air." Text generation and voice synthesis run in overlapping, asynchronous background threads. She processes her next thought while her current sentence is still speaking, dropping latency to ~2-5 seconds.
+
 *   **Quality of Service (QoS) Chat Bridge:** A multi-threaded YouTube Live listener that sorts incoming chat into priority queues. Creator/Admin messages bypass the public queue and are fed to the AI immediately.
+
 *   **Artificial Self-Control (Mode Collapse Prevention):** A custom Python state machine actively monitors her output for repetitive laughter (e.g., `555`, `ฮ่าๆๆ`). If she laughs too many times consecutively, the system triggers a randomized "Timeout," silently suppressing laughter for several turns to ensure natural conversational pacing.
+
 *   **Advanced Thai Transliteration & Sanitization:** A ruthless regex-based "Guillotine" that intercepts LLM hallucinations. It strips out internal English monologues, converts A-Z acronyms into phonetic Thai syllables (e.g., "FPS" -> "เอฟ พี เอส"), expands decimals/math properly, and shields the TTS engine from crashing on emojis or markdown.
+
 *   **Prompt-Injection Immunity:** User chats are securely sandboxed, and delimiters are sanitized before hitting the LLM. Isla is programmed to actively roast anyone who attempts to override her system prompt.
+
 *   **Custom Local OBS Overlays:** FastAPI serves lightweight, CSS-styled HTML endpoints (`/overlay` and `/scrolling_chat`) directly to OBS, visually displaying her current thought process and the live chat queue.
 
 ---
