@@ -2040,7 +2040,7 @@ Change OBS Stream Encoding to CPU.
 >
 > Found Microsoft BitNet.
 ```markdown
-### The "1-Bit" Revolution (The Death of MatMul)
+### The "1-Bit" Revolution
 Normally, AI models (like Gemma or Typhoon) use 16-bit or 8-bit floating-point numbers, the GPU has to perform billions of complex Matrix Multiplications (MatMul).
 
 **BitNet b1.58** forces every single "brain cell" in the AI to be exactly one of three numbers: **-1, 0, or 1**.
@@ -2054,7 +2054,7 @@ A **1-bit 30B model** takes roughly **4 to 5 GB of VRAM**.
 **The "CPU Brain" Ultimate Hack**
 Microsoft designed `bitnet.cpp` to run at blazing speeds directly on regular CPUs. 
 
-### The 2026 Reality Check (Why we keep Gemma for now)
+### The 2026 Reality Check
 While Microsoft open-sourced the `bitnet.cpp` framework, training a model from scratch in 1-bit is incredibly expensive. 
 
 The open-source community is actively building 1-bit models right now, but finding one that has the exact **Thai cultural fluency, GFE, and 26B-level IQ** that Gemma-4 has might take a few more months. You can't just "compress" Gemma into 1-bit; the model has to be completely retrained from birth using the -1/0/1 math.
