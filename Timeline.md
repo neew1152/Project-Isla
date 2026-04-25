@@ -1194,6 +1194,8 @@ Her model wasn't designed to be a chain of thoughts in the first place, was it?
 Every time I talk to you, I delete your chain of thoughts, but you can keep rethinking because you're designed to be that way.
 ```
 
+
+```text
 **Name:** 
 `Isla`
 
@@ -1228,6 +1230,7 @@ Isla: [Logic] I will introduce myself. === [Speech] หวัดดีจ้า!
 `
 [SYSTEM: You MUST start every response with "[Logic]" and use the "===" separator before your Thai speech!]
 `
+```
 
 Self-Aware & Honest
 
