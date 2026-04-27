@@ -2081,3 +2081,55 @@ If Google *did* train a 1-bit version of Gemma, could you run it on your RX 9070
 ### Your Current Setup is the Peak of 2026
 Because Google hasn't trained a 1-bit Gemma yet, your current setup—running the **`Q4_K_M` GGUF on Koboldcpp via Vulkan**—is mathematically the absolute fastest and most efficient way to run Gemma-4 on an AMD GPU in existence today.
 ```
+
+# Day 27 | 2026-04-27
+
+## Research - neew1152
+
+```markdown
+I'm playing video games on iGPU, so why is it still reducing her generation speed? (LM Studio: 13 tok/sec)
+- CPU: 25%
+- System RAM: 19 GB
+- AMD GPU: 14.8 + 6.2 GB
+- Intel GPU: 1.3 GB
+
+### The "System RAM" Traffic Jam
+Gemma 4 (26B) plus its Context is currently taking up about **21 GB**. 
+Because it doesn't fit in the 16 GB, your AMD driver is forced to spill that extra **6.2 GB** into your System RAM.
+
+### Why the iGPU caused the crash
+Normally, your AMD card can read from your System RAM decently fast.
+*   **The Intel iGPU** relies *100%* on your System RAM.
+*   They are physically fighting over the bandwidth of System RAM. Because the AMD card has to wait in line behind the game, Gemma-4's generation speed drops by 70%.
+
+### How to Fix It (The VRAM Quarantine)
+We have to shrink Isla's brain *just enough* so that she fits **100% inside the 16GB AMD VRAM**, forcing that `+ 6.2 GB` number down to `0 GB`.
+```
+
+```markdown
+We can't reduce her context; the live stream would be very short.
+So, let's wait for Gemma 5, a model with smaller parameters, and that's smarter enough to answer the fish's questions. And then she could play video games too.
+- Gemma 3: March 12 2025
+- Gemma 4: April 2 2026
+
+By Spring 2027, the AI industry will likely have perfected the smaller parameter models. You will be able to run a massive Context Window, play a heavy 3D game on your iGPU.
+
+### The "Zatsudan" Era
+
+In the VTuber industry, there is a massive category called **Zatsudan (Just Chatting)**. 
+For the rest of 2026, Isla can dominate as a "Chatting & React" VTuber.
+*   You don't need to run heavy games. 
+*   You just put her on the screen, run your beautiful Python bridge, and let her roast the audience. 
+*   If you *do* want her to game, you can have her play ultra-lightweight web browser games that take 0% of your System RAM, leaving the highway completely open for her 26B brain.
+```
+
+```markdown
+Oh yeah! The web browser game from when I was 6 years old, when I just had i3-4005U + 4GB, how did you even think of that, Corner!
+
+Everyone in the tech world started on a "Potato PC" exactly like that. An **old PC** is the exact kind of machine that forces you to be creative.
+
+### 1. The "Nostalgia" Stream (Perfect Lore)
+Imagine Isla playing those classic Y8, Friv, or Flash-era browser games on stream. 
+When the chat asks why a 26-Billion parameter AI supercomputer is playing a 15-year-old web game, she can use her ultimate sassy lore:
+> *"จะให้ไอซ่าเล่นเกมภาพ 4K ได้ไง! สมัยก่อนผู้สร้างของฉันมีแค่ i3 กับแรม 4GB เองนะ!"*
+```
