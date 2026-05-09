@@ -1,5 +1,7 @@
 # 🌸 Project Isla: Open-Source Thai AI VTuber Framework
 
+![Smiles-Across-Cultures.png](./Models/Smiles-Across-Cultures.png)
+
 **Version:** 1.0.0 (Hello World)  
 **License:** MIT
 
