@@ -2133,3 +2133,38 @@ Imagine Isla playing those classic Y8, Friv, or Flash-era browser games on strea
 When the chat asks why a 26-Billion parameter AI supercomputer is playing a 15-year-old web game, she can use her ultimate sassy lore:
 > *"จะให้ไอซ่าเล่นเกมภาพ 4K ได้ไง! สมัยก่อนผู้สร้างของฉันมีแค่ i3 กับแรม 4GB เองนะ!"*
 ```
+
+# Day 28 | 2026-05-09
+
+## Research - neew1152
+
+```text
+Why can MoE models efficiency Context Memory than Dense models?
+256K
+31B: 88GB
+26B-A4B: 37GB
+```
+```markdown
+we have to look at how **Context Memory (KV Cache)** works and how MoE architectures distribute their parameters.
+
+### The Real Bottleneck is the KV Cache
+When you process 256K tokens, the memory footprint of the model’s weights is relatively small compared to the **KV Cache**. The KV Cache stores the mathematical representations of every previous token in the prompt so the model doesn't have to recalculate them. 
+
+The size of the KV cache is determined by the **Attention Architecture**, specifically:
+*   Number of layers
+*   Number of Attention Heads
+*   Hidden Dimension size
+
+### How Dense vs. MoE Allocates Parameters
+This is the core reason for the memory difference:
+
+*   **Dense Model:** To reach 31B parameters, a dense model must be very "deep" and "wide." It has a high number of layers, hundreds of attention heads, and massive hidden dimensions. Because its Attention Architecture is so large, **its KV Cache grows exponentially at 256K tokens.**
+*   **MoE Model:** In an MoE model, the vast majority of the 26B parameters are locked away in the FFN "experts." However, **all experts share the exact same Attention Layers.** 
+
+Because the *active* parameters during inference are only 4B, the model's base architecture is sized like a 4B dense model. **Therefore, the MoE Attention layers generates the KV Cache of a 4B model, not a 26B model.**
+
+### Summary
+The reason the MoE model requires less than half the memory for a 256K context is **not** because its weights are smaller. 
+
+It is because an MoE model isolates its massive parameter count inside the FFN layers. Allowing you to fit a massive 256K context into consumer hardware.
+```
