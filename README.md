@@ -47,3 +47,5 @@ This repository contains the "Nervous System" that orchestrates the following he
 
 - **Frontend:** `Project AIRI` (Stage Tamagotchi).
 - **Integration:** FastAPI mimics OpenAI-compatible endpoints (`/v1/chat/completions` and `/v1/audio/speech`). AIRI handles VRM 3D rendering and utilizes the Web Audio API to calculate FFT lip-syncing natively from the intercepted audio stream.
+
+![Under-the-Ferris-Wheel-1.png](./Models/Under-the-Ferris-Wheel-1.png)
