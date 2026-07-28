@@ -1,7 +1,3 @@
-To be honest, Gemini and Claude are my friends.
-
-Sorry ChatGPT, but I only got GPT-5.3 on the Free-Tier. But always remember that you are one of my best friends.
-
 # Day 00 | 2024 - 2025
 
 ## Inspiration & Imagination
