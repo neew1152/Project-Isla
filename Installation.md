@@ -2,7 +2,7 @@
 
 > https://github.com/LostRuins/koboldcpp/releases
 
-> https://nodejs.org/dist/v22.22.1/node-v22.22.1-x64.msi
+> https://nodejs.org/en/download
 >
 > ✅ Automatically install the necessary tools.
 
