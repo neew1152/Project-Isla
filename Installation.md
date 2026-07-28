@@ -13,7 +13,7 @@ mkdir C:\VTuber-Project\Models\LLM
 mkdir C:\VTuber-Project\Models\RVC
 
 cd C:\VTuber-Project\Models\LLM
-curl -LO "https://huggingface.co/typhoon-ai/typhoon2.5-qwen3-30b-a3b-gguf/resolve/main/typhoon2.5-qwen3-30b-a3b-q4_k_m.gguf"
+curl -LO "https://huggingface.co/lmstudio-community/Qwen3.5-4B-GGUF/resolve/main/Qwen3.5-4B-Q8_0.gguf"
 
 cd C:\VTuber-Project\Models\RVC
 curl -LO "https://huggingface.co/wok000/vcclient_model/resolve/main/rvc_v2_alpha/tsukuyomi-chan/tsukuyomi_v2_40k.pth"
