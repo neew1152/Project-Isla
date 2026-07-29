@@ -413,7 +413,7 @@ python voice_server.py
 
 - Fix Cross-Origin Resource Sharing & Base URL Formatting:
   - Base URL: http://127.0.0.1:8000/v1
-  - the API Key: sk-1234
+  - The API Key: sk-1234
   - Speech / Model: tts-1
 
 ```powershell
