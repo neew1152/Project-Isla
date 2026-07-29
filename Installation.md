@@ -49,14 +49,14 @@ pnpm dev:tamagotchi
 
 - Changed 3D avatar rendering from AMD's GPU to iGPU (Load Balancing) by adding `electron.exe` for Power Saving on Windows Settings.
 
-> OpenAI Compatible
-> API: kobold
-> Base URL: http://127.0.0.1:8000/v1
+- OpenAI Compatible:
+  - API: kobold
+  - Base URL: http://127.0.0.1:8000/v1
 
-> OpenAI Compatible
-> Base URL: http://127.0.0.1:8000/v1
-> The API Key: sk-1234
-> Speech / Model: tts-1
+- OpenAI Compatible
+  - Base URL: http://127.0.0.1:8000/v1
+  - The API Key: sk-1234
+  - Speech / Model: tts-1
 
 **Name:** 
 `Isla`
