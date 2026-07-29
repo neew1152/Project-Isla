@@ -1,12 +1,8 @@
-# KoboldCpp Installation
+# [KoboldCpp](https://github.com/LostRuins/koboldcpp/releases) Installation
 
-> https://github.com/LostRuins/koboldcpp/releases
+- [Node.js 22.22.1](https://nodejs.org/): ✅ Automatically install the necessary tools.
 
-> https://nodejs.org/en/download
->
-> ✅ Automatically install the necessary tools.
-
-Fix (Optional) `sharp: Installation error: Request timed out` by Cloudflare WARP (Proprietary Software!).
+- Fixed (Optional) `sharp: Installation error: Request timed out` by Cloudflare WARP (Proprietary Software!).
 
 ```powershell
 mkdir C:\VTuber-Project\Models\LLM
@@ -51,16 +47,16 @@ cd C:\VTuber-Project\airi
 pnpm dev:tamagotchi
 ```
 
-Changed 3D avatar rendering from AMD's GPU to iGPU (Load Balancing) by adding `electron.exe` for Power Saving on Windows Settings.
+- Changed 3D avatar rendering from AMD's GPU to iGPU (Load Balancing) by adding `electron.exe` for Power Saving on Windows Settings.
 
 > OpenAI Compatible
-> API : kobold
-> Base URL : http://127.0.0.1:8000/v1
+> API: kobold
+> Base URL: http://127.0.0.1:8000/v1
 
 > OpenAI Compatible
-> Base URL : http://127.0.0.1:8000/v1
-> the API Key : sk-1234
-> Speech / Model : tts-1
+> Base URL: http://127.0.0.1:8000/v1
+> The API Key: sk-1234
+> Speech / Model: tts-1
 
 **Name:** 
 `Isla`
