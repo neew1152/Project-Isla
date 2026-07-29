@@ -7,6 +7,7 @@
 - https://www.plastic-memories.jp
 - https://www.quanticdream.com/en/detroit-become-human
 
+Plastic Memories:
 The engineers’ robot designs are too complex to store binary or digital values, making them impossible to replicate or copy using current technology.
 By mimicking human brainwave/neural/neurotransmitter patterns, they created robots that operate on analog-like—yet even more intricate—values, requiring immense processing power.
 The memory storage of these values is so complex that the system can process and store consciousness and feelings on its own, but it requires severe hardware degradation.
