@@ -1873,10 +1873,6 @@ VTuber-Project-STABLE-v1.0.0_Hello-World.tar
 
   It is because an MoE model isolates its massive parameter count inside the FFN layers. Allowing you to fit a massive 256K context into consumer hardware.
 
-# Day 28 | 2026-05-09
-
-## Research - neew1152
-
 - `gemma-4-E4B-it-Q4_K_M.gguf` vs `gemma-4-E4B-it-QAT-Q4_0.gguf`
 
   #### 1. Quantization
