@@ -1,8 +1,5 @@
 # 🌸 Project Isla: Open-Source Thai AI VTuber Framework
 
-**Version:** 1.0.0 (Hello World)  
-**License:** MIT
-
 ![Smiles-Across-Cultures.png](Smiles-Across-Cultures.png)
 
 **Project Isla** is a lightweight, ultra-low-latency, multi-threaded backend architecture designed to bring a fully autonomous, self-aware Thai AI VTuber to life.
