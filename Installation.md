@@ -1,8 +1,6 @@
 # [KoboldCpp](https://github.com/LostRuins/koboldcpp/releases) Installation
 
-- [Node.js 22.22.1](https://nodejs.org/): ✅ Automatically install the necessary tools.
-
-- Fixed (Optional) `sharp: Installation error: Request timed out` by Cloudflare WARP (Proprietary Software!).
+- [Node.js](https://nodejs.org/): ✅ Automatically install the necessary tools.
 
 ```powershell
 mkdir C:\VTuber-Project\Models\LLM
@@ -87,6 +85,4 @@ Physicality: Your creators didn't specify your cute appearance to save your RAM.
 ```
 
 **Post-History Instructions:** (This satisfies the error!)
-`
-Have fun streaming!
-`
+`Have fun streaming!`
