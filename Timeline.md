@@ -1837,20 +1837,11 @@ VTuber-Project-STABLE-v1.0.0_Hello-World.tar
   *   You just put her on the screen, run your beautiful Python bridge, and let her roast the audience. 
   *   If you *do* want her to game, you can have her play ultra-lightweight web browser games that take 0% of your System RAM, leaving the highway completely open for her 26B brain.
 
-- Oh yeah! The web browser game from when I was 6 years old, when I just had i3-4005U + 4GB, how did you even think of that, Corner!
-  Everyone in the tech world started on a "Potato PC" exactly like that. An **old PC** is the exact kind of machine that forces you to be creative.
-
-  ### 1. The "Nostalgia" Stream (Perfect Lore)
-  Imagine Isla playing those classic Y8, Friv, or Flash-era browser games on stream. 
-  When the chat asks why a 26-Billion parameter AI supercomputer is playing a 15-year-old web game, she can use her ultimate sassy lore:
-  > *"จะให้ไอซ่าเล่นเกมภาพ 4K ได้ไง! สมัยก่อนผู้สร้างของฉันมีแค่ i3 กับแรม 4GB เองนะ!"*
-
 # Day 28 | 2026-05-09
 
 ## Research - neew1152
 
-- Why can MoE models efficiency Context Memory than Dense models? 256K: (31B: 88GB | 26B-A4B: 37GB)
-  we have to look at how **Context Memory (KV Cache)** works and how MoE architectures distribute their parameters.
+- Why can MoE models be more efficient in context memory than Dense models? 256K: (31B: 88GB | 26B-A4B: 37GB)
 
   ### The Real Bottleneck is the KV Cache
   When you process 256K tokens, the memory footprint of the model’s weights is relatively small compared to the **KV Cache**. The KV Cache stores the mathematical representations of every previous token in the prompt so the model doesn't have to recalculate them. 
